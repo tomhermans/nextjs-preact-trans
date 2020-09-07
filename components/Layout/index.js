@@ -10,7 +10,6 @@ const Layout = ({ children }) => {
 
 	return (
 		<div className="layout">
-			<FooterSVG />
 			{/* Header component that doesn't animate */}
 			<Header title="Tom" />
 			<Nav />
@@ -20,6 +19,7 @@ const Layout = ({ children }) => {
 			</Transition>
 
 			<Footer title="At the bottom" />
+			<FooterSVG />
 		</div>
 	);
 };
