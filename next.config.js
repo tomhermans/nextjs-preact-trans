@@ -1,46 +1,69 @@
-const withPrefresh = require('@prefresh/next');
+const path = require("path");
+const withPrefresh = require("@prefresh/next");
+// const withMDX = require("@next/mdx")({
+// 	extension: /\.mdx?$/,
+// });
 
 const config = {
-  experimental: {
-    modern: true,
-    polyfillsOptimization: true
-  },
+	experimental: {
+		modern: true,
+		polyfillsOptimization: true,
+	},
+	sassOptions: {
+		includePaths: [path.join(__dirname, "styles")],
+	},
+	webpack(config, { dev, isServer }) {
+		const splitChunks = config.optimization && config.optimization.splitChunks;
+		if (splitChunks) {
+			const cacheGroups = splitChunks.cacheGroups;
+			const preactModules = /[\\/]node_modules[\\/](preact|preact-render-to-string|preact-context-provider)[\\/]/;
+			if (cacheGroups.framework) {
+				cacheGroups.preact = Object.assign({}, cacheGroups.framework, {
+					test: preactModules,
+				});
+				cacheGroups.commons.name = "framework";
+			} else {
+				cacheGroups.preact = {
+					name: "commons",
+					chunks: "all",
+					test: preactModules,
+				};
+			}
+		}
 
-  webpack(config, { dev, isServer }) {
-    const splitChunks = config.optimization && config.optimization.splitChunks
-    if (splitChunks) {
-      const cacheGroups = splitChunks.cacheGroups;
-      const preactModules = /[\\/]node_modules[\\/](preact|preact-render-to-string|preact-context-provider)[\\/]/;
-      if (cacheGroups.framework) {
-        cacheGroups.preact = Object.assign({}, cacheGroups.framework, {
-          test: preactModules
-        });
-        cacheGroups.commons.name = 'framework';
-      }
-      else {
-        cacheGroups.preact = {
-          name: 'commons',
-          chunks: 'all',
-          test: preactModules
-        };
-      }
-    }
-    
-    // Install webpack aliases:
-    const aliases = config.resolve.alias || (config.resolve.alias = {});
-    aliases.react = aliases['react-dom'] = 'preact/compat';
+		// Install webpack aliases:
+		const aliases = config.resolve.alias || (config.resolve.alias = {});
+		aliases.react = aliases["react-dom"] = "preact/compat";
 
-    // inject Preact DevTools
-    if (dev && !isServer) {
-      const entry = config.entry;
-      config.entry = () => entry().then(entries => {
-        entries['main.js'] = ['preact/debug'].concat(entries['main.js'] || []);
-        return entries;
-      });
-    }
+		// inject Preact DevTools
+		if (dev && !isServer) {
+			const entry = config.entry;
+			config.entry = () =>
+				entry().then((entries) => {
+					entries["main.js"] = ["preact/debug"].concat(
+						entries["main.js"] || []
+					);
+					return entries;
+				});
+		}
 
-    return config;
-  }
+		return config;
+	},
 };
+
+// withMDX
+// const MDXConfig = withMDX({
+// 	//https://github.com/tomhermans/nextjs-mdx-blog-starter/blob/preact-test/next.config.js
+// 	pageExtensions: ["js", "jsx", "md", "mdx"],
+// 	webpack: (config, { isServer }) => {
+// 		// Fixes npm packages (mdx) that depend on `fs` module
+// 		if (!isServer) {
+// 			config.node = {
+// 				fs: "empty",
+// 			};
+// 		}
+// 		return config;
+// 	},
+// });
 
 module.exports = withPrefresh(config);
