@@ -3,7 +3,7 @@ import Transition from "../Transition";
 import Header from "../Header";
 import Nav from "../Nav";
 import Footer from "../Footer";
-import FooterSVG from "../Footer/FooterSVG";
+import FooterSVG from "../Footer/footersvg";
 
 const Layout = ({ children }) => {
 	const router = useRouter();
