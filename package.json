@@ -8,10 +8,13 @@
 	},
 	"devDependencies": {
 		"@prefresh/next": "^0.3.0",
-		"react-refresh": "^0.8.3"
+		"react-refresh": "^0.8.3",
+		"tailwindcss": "^1.8.5"
 	},
 	"dependencies": {
 		"@next/mdx": "^9.5.3",
+		"@tailwindcss/typography": "^0.2.0",
+		"autoprefixer": "^9.8.6",
 		"next": "^9.5.3",
 		"preact": "^10.4.4",
 		"preact-render-to-string": "^5.1.4",

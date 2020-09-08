@@ -1,3 +1,4 @@
+import "../styles/tailwind.css";
 import "./style.scss";
 import Layout from "../components/Layout";
 

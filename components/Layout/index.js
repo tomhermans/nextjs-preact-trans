@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
 			</Transition>
 
 			<Footer title="At the bottom" />
-			<FooterSVG />
+			{/* <FooterSVG /> */}
 		</div>
 	);
 };
