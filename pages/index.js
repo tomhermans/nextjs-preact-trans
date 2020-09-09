@@ -15,7 +15,7 @@ const Home = (props) => {
 				class="px-4 py-2 bg-blue-300 rounded-md mr-2 hover:bg-blue-400"
 				onClick={() => {
 					setState(state - 1);
-					console.log(state, clrArr[state]);
+					// console.log(state, clrArr[state]);
 					document.documentElement.style.setProperty(
 						"--my-variable-name",
 						clrArr[state]
@@ -32,7 +32,7 @@ const Home = (props) => {
 				class="px-4 py-2 bg-blue-300 rounded-md hover:bg-blue-400"
 				onClick={() => {
 					setState(state + 1);
-					console.log(state, clrArr[state]);
+					// console.log(state, clrArr[state]);
 					document.documentElement.style.setProperty(
 						"--my-variable-name",
 						clrArr[state]

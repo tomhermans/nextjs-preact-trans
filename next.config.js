@@ -58,7 +58,7 @@ const config = {
 					return entries;
 				});
 		}
-		console.log("is Prod:", isProd);
+		// console.log("is Prod:", isProd);
 		return config;
 	},
 };

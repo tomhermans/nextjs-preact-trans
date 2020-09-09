@@ -23,7 +23,7 @@ const getTransitionStyles = {
 	},
 };
 const Transition = ({ children, location, style }) => {
-	console.log("TransitionGroup", children, location);
+	// console.log("TransitionGroup", children, location);
 
 	return (
 		<TransitionGroup
