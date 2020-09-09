@@ -1,10 +1,21 @@
+const isProd = process.env.NODE_ENV === "production";
+
 const path = require("path");
+const withPWA = require("next-pwa");
+const withMDX = require("@next/mdx")({
+	extension: /\.mdx?$/,
+});
 const withPrefresh = require("@prefresh/next");
-// const withMDX = require("@next/mdx")({
-// 	extension: /\.mdx?$/,
-// });
 
 const config = {
+	// MDX
+	pageExtensions: ["js", "jsx", "md", "mdx"],
+
+	//PWA
+	pwa: {
+		disable: !isProd,
+		dest: "public",
+	},
 	experimental: {
 		modern: true,
 		polyfillsOptimization: true,
@@ -46,7 +57,7 @@ const config = {
 					return entries;
 				});
 		}
-
+		console.log("is Prod:", isProd);
 		return config;
 	},
 };
@@ -66,4 +77,4 @@ const config = {
 // 	},
 // });
 
-module.exports = withPrefresh(config);
+module.exports = withMDX(withPWA(withPrefresh(config)));

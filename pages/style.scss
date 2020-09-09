@@ -13,14 +13,18 @@ body {
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .layout {
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	max-width: 680px;
 	margin: auto;
 	padding: 1rem;
 	background: #eaeaea;
 	overflow: hidden;
+	#tg {
+		flex-grow: 1;
+	}
 	.main {
 		padding: 1rem;
 		border-radius: 10px; // background: #ddd;
@@ -40,9 +44,9 @@ body {
 		bottom: 0;
 		background: white;
 		z-index: -1;
-		filter: url(#squiggly-1);
-		filter: drop-shadow(5px 5px 2px red);
-		border: 7px solid rgba(0, 0, 0, 0.8);
+		// filter: url(#squiggly-1);
+		// filter: drop-shadow(5px 5px 2px red);
+		// border: 7px solid rgba(0, 0, 0, 0.8);
 	}
 }
 

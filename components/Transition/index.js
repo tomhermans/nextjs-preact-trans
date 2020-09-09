@@ -3,6 +3,8 @@ import {
 	Transition as ReactTransition,
 } from "react-transition-group";
 const TIMEOUT = 200;
+const OPACITYTIMEOUT = 50;
+
 const getTransitionStyles = {
 	entering: {
 		position: `absolute`,
@@ -10,12 +12,12 @@ const getTransitionStyles = {
 		transform: `translateY(60px)`,
 	},
 	entered: {
-		transition: `opacity ${TIMEOUT}ms ease-in-out, transform ${TIMEOUT}ms ease-in-out`,
+		transition: `opacity ${OPACITYTIMEOUT}ms ease-out, transform ${TIMEOUT}ms ease-out`,
 		opacity: 1,
 		transform: `translateX(0px)`,
 	},
 	exiting: {
-		transition: `opacity ${TIMEOUT}ms ease-in-out, transform ${TIMEOUT}ms ease-in-out`,
+		transition: `opacity ${OPACITYTIMEOUT}ms ease-out, transform ${TIMEOUT}ms ease-out`,
 		opacity: 0,
 		transform: `translateY(-40px)`,
 	},
