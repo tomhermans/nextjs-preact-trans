@@ -1,10 +1,16 @@
 module.exports = {
-	purge: ["./src/**/*.html", "./src/**/*.vue", "./src/**/*.jsx"],
+	purge: {
+    enabled: true,
+		content: [
+			"./components/**/*.{js,mdx,jsx}",
+			"./pages/**/*.{js,mdx,jsx}",
+			"./next.config.js",
+		],
+  },
 	future: {
 		removeDeprecatedGapUtilities: true,
 		purgeLayersByDefault: true,
 	}, //https://tailwindcss.com/docs/upcoming-changes
-	purge: [],
 	theme: {
 		extend: {
 			colors: {
