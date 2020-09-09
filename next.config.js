@@ -14,7 +14,7 @@ const config = {
 	//PWA
 	pwa: {
 		disable: !isProd,
-		dest: "public",
+		dest: "public/static",
 	},
 	experimental: {
 		modern: true,
