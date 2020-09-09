@@ -77,4 +77,4 @@ const config = {
 // 	},
 // });
 
-module.exports = withMDX(withPWA(withPrefresh(config)));
+module.exports = withPWA(withMDX(withPrefresh(config)));
