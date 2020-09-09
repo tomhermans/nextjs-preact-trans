@@ -30,7 +30,7 @@ class MyDocument extends Document {
 					<meta name="msapplication-TileColor" content="#e32127" />
 					<meta name="msapplication-tap-highlight" content="no" />
 					<meta name="theme-color" content="#000000" />
-
+					<title>Tom's Next PWA App</title>
 					<link
 						rel="apple-touch-icon"
 						sizes="180x180"

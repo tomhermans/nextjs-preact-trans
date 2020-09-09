@@ -8,14 +8,15 @@
 			"type": "image/png"
 		},
 		{
-			"src": "/static/icons/android-chrome-384x384.png",
-			"sizes": "384x384",
+			"src": "/static/static/icons/android-chrome-512x512.png",
+			"sizes": "512x512",
 			"type": "image/png"
 		},
 		{
-			"src": "/static/icons/icon-512x512.png",
-			"sizes": "512x512",
-			"type": "image/png"
+			"src": "/static/static/icons/maskable_icon.png",
+			"sizes": "1024x1024",
+			"type": "image/png",
+			"purpose": "maskable"
 		}
 	],
 	"theme_color": "#e32127",
