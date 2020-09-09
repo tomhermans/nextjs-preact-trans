@@ -25,7 +25,7 @@ class MyDocument extends Document {
 					<meta name="mobile-web-app-capable" content="yes" />
 					<meta
 						name="msapplication-config"
-						content="/public/icons/browserconfig.xml"
+						content="/static/icons/browserconfig.xml"
 					/>
 					<meta name="msapplication-TileColor" content="#e32127" />
 					<meta name="msapplication-tap-highlight" content="no" />
@@ -34,27 +34,27 @@ class MyDocument extends Document {
 					<link
 						rel="apple-touch-icon"
 						sizes="180x180"
-						href="/public/icons/apple-touch-icon.png"
+						href="/static/icons/apple-touch-icon.png"
 					/>
 					<link
 						rel="icon"
 						type="image/png"
 						sizes="32x32"
-						href="/public/icons/favicon-32x32.png"
+						href="/static/icons/favicon-32x32.png"
 					/>
 					<link
 						rel="icon"
 						type="image/png"
 						sizes="16x16"
-						href="/public/icons/favicon-16x16.png"
+						href="/static/icons/favicon-16x16.png"
 					/>
 					<link rel="manifest" href="/static/manifest.json" />
 					<link
 						rel="mask-icon"
-						href="/public/icons/safari-pinned-tab.svg"
+						href="/static/icons/safari-pinned-tab.svg"
 						color="#5bbad5"
 					/>
-					<link rel="shortcut icon" href="/public/icons/favicon.ico" />
+					<link rel="shortcut icon" href="/static/icons/favicon.ico" />
 
 					<meta name="twitter:card" content="summary" />
 					<meta
@@ -68,7 +68,7 @@ class MyDocument extends Document {
 					/>
 					<meta
 						name="twitter:image"
-						content="https://vibrant-benz-d6c5e1.netlify.app/public/icons/android-chrome-192x192.png"
+						content="https://vibrant-benz-d6c5e1.netlify.app/static/icons/android-chrome-192x192.png"
 					/>
 					<meta name="twitter:creator" content="@DavidWShadow" />
 					<meta property="og:type" content="website" />
@@ -84,7 +84,7 @@ class MyDocument extends Document {
 					/>
 					<meta
 						property="og:image"
-						content="https://vibrant-benz-d6c5e1.netlify.app/public/icons/apple-touch-icon.png"
+						content="https://vibrant-benz-d6c5e1.netlify.app/static/icons/apple-touch-icon.png"
 					/>
 				</Head>
 				<body>

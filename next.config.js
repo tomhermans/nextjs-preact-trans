@@ -13,13 +13,14 @@ const config = {
 
 	//PWA
 	pwa: {
+		register: true,
 		disable: !isProd,
-		dest: "public/static",
+		dest: "public",
 	},
-	experimental: {
-		modern: true,
-		polyfillsOptimization: true,
-	},
+	// experimental: {
+	// 	modern: true,
+	// 	polyfillsOptimization: true,
+	// },
 	sassOptions: {
 		includePaths: [path.join(__dirname, "styles")],
 	},
