@@ -1,11 +1,11 @@
 module.exports = {
-	purge: {
+  purge: {
     enabled: true,
-		content: [
-			"./components/**/*.{js,mdx,jsx}",
-			"./pages/**/*.{js,mdx,jsx}",
-			"./next.config.js",
-		],
+    content: [
+      "./components/**/*.{js,mdx,jsx}",
+      "./pages/**/*.{js,mdx,jsx}",
+      "./next.config.js",
+    ],
   },
 	future: {
 		removeDeprecatedGapUtilities: true,
