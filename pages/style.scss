@@ -7,6 +7,10 @@
 	--header: #2d3748;
 }
 
+html {
+	background: var(--bg);
+	color: var(--clr);
+}
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -17,10 +21,10 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	max-width: 680px;
+	// max-width: 680px;
 	margin: auto;
 	padding: 1rem;
-	background: #eaeaea;
+	background: var(--bg);
 	overflow: hidden;
 	#tg {
 		flex-grow: 1;
@@ -42,11 +46,11 @@ body {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: white;
+		background: var(-bg);
 		z-index: -1;
 		// filter: url(#squiggly-1);
 		// filter: drop-shadow(5px 5px 2px red);
-		// border: 7px solid rgba(0, 0, 0, 0.8);
+		border: 2px solid var(--clr); //rgba(var(--clr), 0.8);
 	}
 }
 

@@ -9,9 +9,14 @@ export default function Nav(props) {
 						<a class="text-blue-700 underline">Home</a>
 					</Link>
 				</li>
-				<li>
+				<li class="mr-2">
 					<Link href="/about">
 						<a class="text-blue-700 underline">About</a>
+					</Link>
+				</li>
+				<li>
+					<Link href="/blog">
+						<a class="text-blue-700 underline">Blog</a>
 					</Link>
 				</li>
 			</ul>
