@@ -5,14 +5,14 @@ const Home = (props) => {
 	const clrArr = ["pink", "blue", "tomato", "lime", "cyan", "red"];
 	return (
 		<main>
-			<h1 class="bg-orange-400 px-4">Hello from Preact</h1>
+			<h1 class=" px-4">Hello from Preact</h1>
 			<Link href="/about">
 				<a>About</a>
 			</Link>
 			<div>Home page content goes here</div>
 			<p>{state}</p>
 			<button
-				class="px-4 py-2 bg-blue-300 rounded-md mr-2 hover:bg-blue-400"
+				class="px-4 py-2 bg-blue-300 dark:bg-blue-800 rounded-md mr-2 hover:bg-blue-400"
 				onClick={() => {
 					setState(state - 1);
 					// console.log(state, clrArr[state]);

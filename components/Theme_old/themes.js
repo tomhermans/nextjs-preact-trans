@@ -10,6 +10,12 @@ const lightTheme = {
 	buttonColor: "black",
 };
 
+const geocitiesTheme = {
+	name: "geocities",
+	buttonBg: "yellow",
+	buttonColor: "blue",
+};
+
 const makeCssTheme = (jsTheme, namespace) =>
 	Object.entries(jsTheme).reduce(
 		(cssTheme, [key, value]) => ({

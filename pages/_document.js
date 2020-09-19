@@ -8,7 +8,13 @@ class MyDocument extends Document {
 
 	render() {
 		return (
-			<Html lang="en">
+			<Html className="font-sans bg-base" data-theme="">
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `<!-- oh, so you're a curious fellow, check my github or codepen -->`,
+					}}
+				/>
+
 				<Head>
 					<meta name="application-name" content="Tom Next PWA App" />
 					<meta name="apple-mobile-web-app-capable" content="yes" />
