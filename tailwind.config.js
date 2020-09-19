@@ -94,15 +94,28 @@ module.exports = {
 		themeSwapper({
 			themes: [
 				{
+					name: "root",
+					selectors: [":root"],
+					theme: baseTheme,
+				},
+				{
+					name: "prefers-dark",
+					mediaQuery: "@media (prefers-color-scheme: dark)",
+					theme: darkTheme,
+				},
+				{
+					name: "prefers-light",
+					mediaQuery: "@media (prefers-color-scheme: light)",
+					theme: baseTheme,
+				},
+				{
 					name: "base",
-					selectors: [":root", ".light", '[data-theme="light"]'],
-					// mediaQuery: "@media (prefers-color-scheme: light)",
+					selectors: [".light", '[data-theme="light"]'],
 					theme: baseTheme,
 				},
 				{
 					name: "dark",
 					selectors: [".dark", '[data-theme="dark"]'],
-					mediaQuery: "@media (prefers-color-scheme: dark)",
 					theme: darkTheme,
 				},
 				{
