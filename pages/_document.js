@@ -3,12 +3,18 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
 	static async getInitialProps(ctx) {
 		const initialProps = await Document.getInitialProps(ctx);
+		console.log("initprops get");
 		return { ...initialProps };
 	}
 
 	render() {
 		return (
-			<Html className="font-sans bg-base" data-theme="">
+			<Html className="font-sans bg-black bg-base" data-theme="">
+				<script>
+					let LSTheme = localStorage.getItem('data-theme');
+					{/* console.log('localstorage theme',LSTheme); */}
+					document.documentElement.setAttribute('data-theme', LSTheme);
+				</script>
 				<script
 					dangerouslySetInnerHTML={{
 						__html: `<!-- oh, so you're a curious fellow, check my github or codepen -->`,

@@ -11,11 +11,11 @@ import { useContext, useState } from "react";
 const Layout = ({ children }) => {
 	const theme = useContext(ThemeContext);
 	const router = useRouter();
-	console.log("theme", theme);
+	console.log("themes : ", theme);
+	console.log("themeContext : ", ThemeContext);
 
 	return (
 		<div className="layout">
-			theme Object: {JSON.stringify(theme)}
 			{/* Header component that doesn't animate */}
 			<Header title="Tom" />
 			{/* <button onClick={toggleTheme}>Click to toggle theme</button> */}

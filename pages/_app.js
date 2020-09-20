@@ -6,28 +6,18 @@ import ThemeContext, { themes } from "../components/themeContext";
 import Layout from "../components/Layout";
 import Head from "next/head";
 
-function updateHtmlClass(theme) {
-	const cl = document.documentElement;
-	// cl.classList.remove("dark", "light", "geocities");
-	// cl.classList.add(theme);
-	cl.setAttribute("data-theme", theme);
-}
-
 const App = ({ Component, pageProps, router }) => {
 	const [theme, setTheme] = useState(themes.dark);
-	const toggleTheme = () => {
-		theme === themes.dark ? setTheme(themes.default) : setTheme(themes.dark);
-		console.log("switched", theme, themes);
-		for (const [key, value] of Object.entries(theme)) {
-			// console.log(`${key}: ${value}`);
-			// document.documentElement.style.setProperty(`${key}`, `${value}`);
-			document.documentElement.setAttribute("data-theme", "geocities");
-			updateHtmlClass(theme);
-		}
+
+	const updateHtmlClass = (theme) => {
+		document.documentElement.setAttribute("data-theme", theme); // change htnl wrapper data-theme
+		localStorage.setItem("data-theme", theme); // change localStorage data-theme
+		setTheme(theme); // set state theme
 	};
+
 	return (
 		<ThemeContext.Provider value={theme}>
-			<button onClick={toggleTheme}>Toggle Theme</button>{" "}
+			{/* <button onClick={toggleTheme}>Toggle Theme</button>{" "} */}
 			{["light", "dark", "geocities", "mario"].map((themeName) => (
 				<button
 					key={themeName}

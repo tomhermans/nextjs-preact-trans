@@ -3,6 +3,7 @@ const baseTheme = {
 	colors: {
 		primary: "#384cff",
 		"primary-active": "#0014c7",
+		air: "#bada55",
 		surface: "#ddd",
 		base: "#eee",
 		dark: "#222",
@@ -21,6 +22,7 @@ const darkTheme = {
 	colors: {
 		primary: "#e320b6",
 		"primary-active": "#ff00c4",
+		air: "#baba55",
 		surface: "#111",
 		base: "#000",
 		dark: "#ccc",
@@ -31,6 +33,7 @@ const geocitiesTheme = {
 	colors: {
 		primary: "#f9e0e",
 		"primary-active": "#70a300",
+		air: "#daaa55",
 		surface: "#2f4d2f",
 		base: "#243b24",
 		dark: "#99a663",
@@ -41,6 +44,7 @@ const marioTheme = {
 	colors: {
 		primary: "#ff0000",
 		"primary-active": "#4db000",
+		air: "#bada55",
 		surface: "#1500ff",
 		base: "#fdff00",
 		dark: "#f000ff",
