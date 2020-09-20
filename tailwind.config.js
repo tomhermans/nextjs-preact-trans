@@ -67,10 +67,12 @@ const squarierTheme = {
 		default: "0",
 	},
 };
+// console.log(process.env);
 
 module.exports = {
 	purge: {
-		enabled: true,
+		enabled: false, // turn to true in production
+		enabled: process.env.NODE_ENV === "production" ? true : false,
 		content: [
 			"./components/**/*.{js,mdx,jsx}",
 			"./pages/**/*.{js,mdx,jsx}",
@@ -83,6 +85,10 @@ module.exports = {
 	}, //https://tailwindcss.com/docs/upcoming-changes
 	theme: {
 		extend: {
+			screens: {
+				light: { raw: "(prefers-color-scheme: light)" },
+				dark: { raw: "(prefers-color-scheme: dark)" },
+			},
 			// colors: {
 			// 	primary: "var(--primary)",
 			// 	secondary: "var(--secondary)",
@@ -95,6 +101,20 @@ module.exports = {
 	},
 	variants: {},
 	plugins: [
+		function ({ addBase, config }) {
+			addBase({
+				html: {
+					color: config("theme.colors.black"),
+					backgroundColor: config("theme.colors.white"),
+				},
+				"@screen dark": {
+					html: {
+						color: config("theme.colors.white"),
+						backgroundColor: config("theme.colors.black"),
+					},
+				},
+			});
+		},
 		themeSwapper({
 			themes: [
 				{
