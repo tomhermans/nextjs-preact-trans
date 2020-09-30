@@ -4,8 +4,8 @@ import { getAllPosts } from "../api";
 import config from "../blog.config";
 import PostList from "../components/Post/PostList";
 
-const Blog = (props, posts, prevPosts, nextPosts) => {
-	console.log("posts object: ", posts);
+const Blog = (posts, prevPosts, nextPosts) => {
+	console.log("Blog - posts object: ", posts, prevPosts, nextPosts);
 	return (
 		<main>
 			<h1 class="bg-orange-400 px-4">Hello from Blog</h1>
@@ -14,7 +14,7 @@ const Blog = (props, posts, prevPosts, nextPosts) => {
 			</Link>
 			<div>Blog page content goes here</div>
 			<FakeText title="SOme blog content etc" />
-			{/* <PostList posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} /> */}
+			<PostList posts={posts} prevPosts={prevPosts} nextPosts={nextPosts} />
 		</main>
 	);
 };
@@ -22,18 +22,19 @@ const Blog = (props, posts, prevPosts, nextPosts) => {
 export async function getStaticProps() {
 	const posts = getAllPosts([
 		"title",
-		"date",
+		"publishedAt",
 		"slug",
-		"author",
-		"coverImage",
-		"coverImageAlt",
-		"excerpt",
-		"draft",
+		// "author",
+		// "coverImage",
+		// "coverImageAlt",
+		"summary",
+		// "draft",
 	]);
-	// console.log(posts);
+	console.log("GAP = ", posts);
+	console.log("typeof posts = ", typeof posts);
 
 	const startIndex = 0;
-	const endIndex = config.postsPerPage;
+	const endIndex = 3; //config.postsPerPage;
 	const prevPosts = null;
 	const nextPosts = endIndex >= posts.length ? null : 2;
 	return {

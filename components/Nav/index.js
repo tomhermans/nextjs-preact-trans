@@ -14,9 +14,19 @@ export default function Nav(props) {
 						<a class="text-blue-700 underline">About</a>
 					</Link>
 				</li>
-				<li>
+				<li class="mr-2">
 					<Link href="/blog">
 						<a class="text-blue-700 underline">Blog</a>
+					</Link>
+				</li>
+				<li class="mr-2">
+					<Link href="/blog-1">
+						<a class="text-blue-700 underline">Hacker article</a>
+					</Link>
+				</li>
+				<li class="mr-2">
+					<Link href="/blog/blog-2">
+						<a class="text-blue-700 underline">article in /blog</a>
 					</Link>
 				</li>
 			</ul>

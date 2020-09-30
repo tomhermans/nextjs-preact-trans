@@ -11,8 +11,8 @@ import { useContext, useState } from "react";
 const Layout = ({ children }) => {
 	const theme = useContext(ThemeContext);
 	const router = useRouter();
-	console.log("themes : ", theme);
-	console.log("themeContext : ", ThemeContext);
+	// console.log("themes : ", theme);
+	// console.log("themeContext : ", ThemeContext);
 
 	return (
 		<div className="layout">

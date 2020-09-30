@@ -1,3 +1,17 @@
+const tinycolor = require("tinycolor2"); // https://github.com/bgrins/TinyColor
+var color = tinycolor("lime");
+var color1 = tinycolor("green");
+
+console.log("tinycolor", color, color.toHslString());
+console.log(color.getBrightness(), color.isLight());
+console.log(color1.getBrightness(), color1.isLight());
+
+var colors = tinycolor("#f00").triad();
+console.log(colors);
+colors.map((t) => {
+	console.log(t.toHslString());
+});
+
 const themeSwapper = require("tailwindcss-theme-swapper");
 const baseTheme = {
 	colors: {
@@ -71,7 +85,6 @@ const squarierTheme = {
 
 module.exports = {
 	purge: {
-		enabled: false, // turn to true in production
 		enabled: process.env.NODE_ENV === "production" ? true : false,
 		content: [
 			"./components/**/*.{js,mdx,jsx}",
@@ -84,6 +97,18 @@ module.exports = {
 		purgeLayersByDefault: true,
 	}, //https://tailwindcss.com/docs/upcoming-changes
 	theme: {
+		fontSize: {
+			12: "12px",
+			14: "14px",
+			16: "16px",
+			18: "18px",
+			20: "20px",
+			24: "24px",
+			30: "30px",
+			36: "36px",
+			48: "48px",
+			64: "64px",
+		},
 		extend: {
 			screens: {
 				light: { raw: "(prefers-color-scheme: light)" },

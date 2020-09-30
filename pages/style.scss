@@ -63,7 +63,7 @@ body {
 
 h1,
 h2 {
-	@apply font-bold text-2xl text-dark;
+	@apply font-bold text-24 text-dark;
 	// background: var(--my-variable-name) !important;
 	transition: background 0.25s;
 	&:hover {

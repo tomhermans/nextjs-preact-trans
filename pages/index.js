@@ -7,7 +7,7 @@ const Home = (props) => {
 		<main>
 			<h1 class=" px-4">Hello from Preact</h1>
 			<Link href="/about">
-				<a>About</a>
+				<a>Link to About</a>
 			</Link>
 			<div>Home page content goes here</div>
 			<p>{state}</p>

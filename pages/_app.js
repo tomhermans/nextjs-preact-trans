@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/tailwind.css";
 import "./style.scss";
+import { MDXProvider } from "@mdx-js/react";
 import ThemeContext, { themes } from "../components/themeContext";
 
 import Layout from "../components/Layout";
@@ -31,7 +32,9 @@ const App = ({ Component, pageProps, router }) => {
 				<Head>
 					<title>Tom's Next PWA App</title>
 				</Head>
-				<Component {...pageProps} key={router.route} />
+				<MDXProvider>
+					<Component {...pageProps} key={router.route} />
+				</MDXProvider>
 			</Layout>
 		</ThemeContext.Provider>
 	);
