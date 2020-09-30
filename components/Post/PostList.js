@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const PostList = ({ posts, prevPosts, nextPosts }) => {
 	const isLocal = process.env.NODE_ENV === "development";
-	console.log("posts type = ", typeof posts);
-	console.log("postlist posts", posts);
+	// console.log("posts type = ", typeof posts);
+	// console.log("postlist posts", posts);
 	return (
 		<div>
 			{posts.posts &&

@@ -20,10 +20,10 @@ const Layout = ({ children }) => {
 			<Header title="Tom" />
 			{/* <button onClick={toggleTheme}>Click to toggle theme</button> */}
 			<Nav />
-			<p class="text-lg font-medium leading-6 text-primary">
+			{/* <p class="text-lg font-medium leading-6 text-primary">
 				Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
 				voluptatum cupiditate veritatis in accusamus quisquam.
-			</p>
+			</p> */}
 			<Transition location={router.pathname}>
 				<main className="bg-squiggly-pseudo main">{children}</main>
 			</Transition>
