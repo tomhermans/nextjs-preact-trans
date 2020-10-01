@@ -29,9 +29,6 @@ const App = ({ Component, pageProps, router }) => {
 				</button>
 			))}
 			<Layout>
-				<Head>
-					<title>Tom's Next PWA App</title>
-				</Head>
 				<MDXProvider>
 					<Component {...pageProps} key={router.route} />
 				</MDXProvider>
