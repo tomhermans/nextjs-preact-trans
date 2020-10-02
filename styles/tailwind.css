@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "Lora";
+	font-weight: 300;
+	font-style: normal;
+	src: url("https://cms.jamstack.be/fonts/Lora-subset/lora-v14-latin-regular-subset.woff2")
+		format("woff2");
+	/* unicode-range: ''; */
+}
+
+/*
+  load the subset AND the full family and use it as the fallback
+*/
+
 a {
 	text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Lora", serif;
 }
