@@ -42,7 +42,13 @@ class MyDocument extends Document {
 					<meta name="msapplication-TileColor" content="#e32127" />
 					<meta name="msapplication-tap-highlight" content="no" />
 					<meta name="theme-color" content="#000000" />
-
+					<link
+						rel="preload"
+						as="font"
+						type="font/woff2"
+						crossorigin="anonymous"
+						href="https://cms.jamstack.be/fonts/Lora-subset/lora-v14-latin-regular-subset.woff2"
+					/>
 					<link
 						rel="apple-touch-icon"
 						sizes="180x180"
