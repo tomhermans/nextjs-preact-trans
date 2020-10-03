@@ -9,7 +9,8 @@ class MyDocument extends Document {
 
 	render() {
 		return (
-			<Html className="font-sans bg-black bg-base" data-theme="">
+			<Html lang="en" className="font-sans bg-black bg-base" data-theme="">
+				<title>Tom Next PWA App</title>
 				<script>
 					let LSTheme = localStorage.getItem('data-theme');
 					{/* console.log('localstorage theme',LSTheme); */}

@@ -9,6 +9,7 @@
 	src: url("https://cms.jamstack.be/fonts/Lora-subset/lora-v14-latin-regular-subset.woff2")
 		format("woff2");
 	/* unicode-range: ''; */
+	font-display: swap;
 }
 
 /*
