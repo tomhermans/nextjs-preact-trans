@@ -3,6 +3,7 @@ import "../styles/tailwind.css";
 import "./style.scss";
 import { MDXProvider } from "@mdx-js/react";
 import ThemeContext, { themes } from "../components/themeContext";
+import { MDXEmbedProvider } from "mdx-embed";
 
 import Layout from "../components/Layout";
 import Head from "next/head";
@@ -30,7 +31,9 @@ const App = ({ Component, pageProps, router }) => {
 			))}
 			<Layout>
 				<MDXProvider>
-					<Component {...pageProps} key={router.route} />
+					<MDXEmbedProvider>
+						<Component {...pageProps} key={router.route} />
+					</MDXEmbedProvider>
 				</MDXProvider>
 			</Layout>
 		</ThemeContext.Provider>
