@@ -109,6 +109,19 @@ module.exports = {
 			48: "48px",
 			64: "64px",
 		},
+		// colors: {
+		// 	// override set color values with CSS property values
+		// 	// red: {
+		// 	// 	500: "var(--red-500)",
+		// 	// 	600: "var(--red-600)",
+		// 	// 	700: "var(--red-700)",
+		// 	// },
+		// 	// blue: {
+		// 	// 	500: "var(--blue-500)",
+		// 	// 	600: "var(--blue-600)",
+		// 	// 	700: "var(--blue-700)",
+		// 	// },
+		// },
 		extend: {
 			screens: {
 				light: { raw: "(prefers-color-scheme: light)" },
@@ -126,6 +139,15 @@ module.exports = {
 	},
 	variants: {},
 	plugins: [
+		require("tailwind-css-variables")(
+			// exposes all TW custom properties - https://github.com/omarkhatibco/tailwind-css-variables
+			{
+				// modules
+			},
+			{
+				// options
+			}
+		),
 		function ({ addBase, config }) {
 			addBase({
 				html: {

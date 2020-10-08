@@ -14,6 +14,9 @@
 		"tinycolor2": "^1.4.1"
 	},
 	"dependencies": {
+		"@emotion/babel-preset-css-prop": "^10.0.27",
+		"@emotion/core": "^10.0.35",
+		"@emotion/styled": "^10.0.27",
 		"@mdx-js/loader": "^1.6.16",
 		"@next/mdx": "^9.5.3",
 		"@tailwindcss/typography": "^0.2.0",
@@ -30,6 +33,17 @@
 		"react-ssr-prepass": "npm:preact-ssr-prepass@^1.0.1",
 		"react-transition-group": "^4.4.1",
 		"sass": "^1.26.10",
-		"tailwindcss-theme-swapper": "crswll/tailwindcss-theme-swapper"
+		"tailwind-css-variables": "^2.0.3",
+		"tailwindcss-theme-swapper": "crswll/tailwindcss-theme-swapper",
+		"twin.macro": "^1.10.0"
+	},
+	"babelMacros": {
+		"twin": {
+			"config": "tailwind.config.js",
+			"preset": "emotion",
+			"debugProp": true,
+			"debugPlugins": false,
+			"debug": false
+		}
 	}
 }

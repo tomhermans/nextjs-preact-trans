@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { GlobalStyles } from "twin.macro";
+
 import "../styles/tailwind.css";
 import "./style.scss";
 import { MDXProvider } from "@mdx-js/react";
@@ -18,25 +20,28 @@ const App = ({ Component, pageProps, router }) => {
 	};
 
 	return (
-		<ThemeContext.Provider value={theme}>
-			{/* <button onClick={toggleTheme}>Toggle Theme</button>{" "} */}
-			{["light", "dark", "geocities", "mario"].map((themeName) => (
-				<button
-					key={themeName}
-					className="mr-2 rounded bg-surface text-primary p-medium"
-					onClick={() => updateHtmlClass(themeName)}
-				>
-					{themeName}
-				</button>
-			))}
-			<Layout>
-				<MDXProvider>
-					<MDXEmbedProvider>
-						<Component {...pageProps} key={router.route} />
-					</MDXEmbedProvider>
-				</MDXProvider>
-			</Layout>
-		</ThemeContext.Provider>
+		<>
+			<GlobalStyles />
+			<ThemeContext.Provider value={theme}>
+				{/* <button onClick={toggleTheme}>Toggle Theme</button>{" "} */}
+				{["light", "dark", "geocities", "mario"].map((themeName) => (
+					<button
+						key={themeName}
+						className="mr-2 rounded bg-surface text-primary p-medium"
+						onClick={() => updateHtmlClass(themeName)}
+					>
+						{themeName}
+					</button>
+				))}
+				<Layout>
+					<MDXProvider>
+						<MDXEmbedProvider>
+							<Component {...pageProps} key={router.route} />
+						</MDXEmbedProvider>
+					</MDXProvider>
+				</Layout>
+			</ThemeContext.Provider>
+		</>
 	);
 };
 export default App;

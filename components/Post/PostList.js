@@ -18,18 +18,19 @@ const PostList = ({ posts, prevPosts, nextPosts }) => {
 					.map((post) => (
 						// console.log(typeof post),
 						// console.log(post),
-						<div key={post.slug}>
-							<div>
-								<Link href={"/blog/" + post.slug} passHref>
-									<a>{post.title}</a>
-								</Link>
-							</div>
-
-							<div>{post.excerpt}</div>
-							<Link href={"/blog/" + post.slug} passHref>
-								<a>Read more...</a>
-							</Link>
-						</div>
+						<Link href={"/blog/" + post.slug} passHref>
+							<a href="">
+								<div className="mb-4" key={post.slug}>
+									<div>
+										<a className="no-underline">{post.title}</a>
+									</div>
+									<div>{post.excerpt}</div>
+									<a href="" className="text-sm">
+										Read more →
+									</a>
+								</div>
+							</a>
+						</Link>
 					))}
 			<div>
 				<div>

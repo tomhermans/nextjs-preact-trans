@@ -1,3 +1,11 @@
+:root {
+	--red-500: #f00;
+	--red-600: #af0;
+	--red-700: #00f;
+	--blue-500: #00f;
+	--blue-600: #00a;
+	--blue-700: #008;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
