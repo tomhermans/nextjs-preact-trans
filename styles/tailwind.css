@@ -1,11 +1,3 @@
-:root {
-	--red-500: #f00;
-	--red-600: #af0;
-	--red-700: #00f;
-	--blue-500: #00f;
-	--blue-600: #00a;
-	--blue-700: #008;
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,4 +26,35 @@ h4,
 h5,
 h6 {
 	font-family: "Lora", serif;
+}
+
+/* focus */
+a:focus {
+	outline: 3px solid blue;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+/* https://hankchizljaw.com/wrote/a-modern-css-reset/ */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* GPU acceleration - https://davidwalsh.name/translate3d */
+.animClass {
+	transform: translate3d(0, 0, 0);
+	/* more specific animation properties here */
 }

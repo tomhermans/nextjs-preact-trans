@@ -31,7 +31,7 @@ export const geocitiesTheme = {
 		primary: "#7f9e0e",
 		"primary-active": "#70a300",
 		surface: "#2f4d2f",
-		base: "#243b24",
+		base: var(--color-green-800), //"#243b24",
 		dark: "#66a663",
 	},
 };

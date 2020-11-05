@@ -1,3 +1,10 @@
+// ISSUE self-referencing custom css properties
+// design tokens file OR the full tailwind config
+// loop over the props
+// generate all custom props ( var(--color-red-500 etc ))
+// generate a new colors array by looping
+// e.g. customcolors : [100: "var(--color-red-100)",200: "var(--color-red-200)",.. ]
+
 const tinycolor = require("tinycolor2"); // https://github.com/bgrins/TinyColor
 var color = tinycolor("lime");
 var color1 = tinycolor("green");
@@ -49,7 +56,7 @@ const geocitiesTheme = {
 		"primary-active": "#70a300",
 		air: "#daaa55",
 		surface: "#2f4d2f",
-		base: "#243b24",
+		base: "var(--color-green-800)", //"#243b24"
 		dark: "#99a663",
 	},
 };
@@ -97,6 +104,19 @@ module.exports = {
 		purgeLayersByDefault: true,
 	}, //https://tailwindcss.com/docs/upcoming-changes
 	theme: {
+		// colors: {
+		// 	gray: {
+		// 		100: "var(--color-gray-500)",
+		// 		200: "var(--color-gray-400)",
+		// 		300: "var(--color-gray-300)",
+		// 		400: "var(--color-gray-200)",
+		// 		500: "var(--color-gray-100)",
+		// 		600: "var(--color-gray-600)",
+		// 		700: "var(--color-gray-700)",
+		// 		800: "var(--color-gray-800)",
+		// 		900: "var(--color-gray-900)",
+		// 	},
+		// },
 		fontSize: {
 			12: "12px",
 			14: "14px",
@@ -109,23 +129,36 @@ module.exports = {
 			48: "48px",
 			64: "64px",
 		},
-		// colors: {
-		// 	// override set color values with CSS property values
-		// 	// red: {
-		// 	// 	500: "var(--red-500)",
-		// 	// 	600: "var(--red-600)",
-		// 	// 	700: "var(--red-700)",
-		// 	// },
-		// 	// blue: {
-		// 	// 	500: "var(--blue-500)",
-		// 	// 	600: "var(--blue-600)",
-		// 	// 	700: "var(--blue-700)",
-		// 	// },
-		// },
+		colors: {
+			gray: {
+				100: "#ccc",
+				200: "#bbb",
+				300: "#ddd",
+				400: "#f00",
+				500: "#0f0",
+				600: "#00f",
+				700: "var(--color-gray-700)",
+				800: "var(--color-gray-800)",
+				900: "var(--color-gray-900)",
+			},
+		},
 		extend: {
 			screens: {
 				light: { raw: "(prefers-color-scheme: light)" },
 				dark: { raw: "(prefers-color-scheme: dark)" },
+			},
+			colors: {
+				grey: {
+					100: "var(--color-gray-500)",
+					200: "var(--color-gray-400)",
+					300: "var(--color-gray-300)",
+					400: "var(--color-gray-200)",
+					500: "var(--color-gray-100)",
+					600: "var(--color-gray-600)",
+					700: "var(--color-gray-700)",
+					800: "var(--color-gray-800)",
+					900: "var(--color-gray-900)",
+				},
 			},
 			// colors: {
 			// 	primary: "var(--primary)",

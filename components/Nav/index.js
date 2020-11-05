@@ -8,6 +8,11 @@ export default function Nav(props) {
 					<Link href="/">
 						<a class="text-blue-700 underline">Home</a>
 					</Link>
+        </li>
+        <li class="mr-2">
+					<Link href="/fonttest">
+						<a class="text-blue-700 underline">Fonttest</a>
+					</Link>
 				</li>
 				<li class="mr-2">
 					<Link href="/about">

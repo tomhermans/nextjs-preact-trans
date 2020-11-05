@@ -1,8 +1,12 @@
 import Link from "next/link";
+import Block from "../components/Block";
+import SVGComponent from "../components/Svgcomponent/index";
 
 const Home = (props) => {
 	const [state, setState] = React.useState(0);
 	const clrArr = ["pink", "blue", "tomato", "lime", "cyan", "red"];
+	const clrArr2 = ["black", "white", "black", "white", "black", "grey"];
+	const clrArr3 = ["#f7d9cc", "#fabca1", "#fd9d72", "#fd7a45", "#f7542b"];
 	return (
 		<main>
 			<h1 class=" px-4">Hello from Preact</h1>
@@ -11,6 +15,15 @@ const Home = (props) => {
 			</Link>
 			<div>Home page content goes here</div>
 			<p>{state}</p>
+
+			<Block bg="primary" text="grey-200">
+				Block children{" "}
+			</Block>
+
+			<SVGComponent id="a" fill={clrArr} width="40" />
+			<SVGComponent id="b" fill={clrArr2} width="40" />
+			<SVGComponent id="c" fill={clrArr3} width="120" />
+
 			<button
 				class="px-4 py-2 bg-blue-300 dark:bg-blue-800 rounded-md mr-2 hover:bg-blue-400"
 				onClick={() => {
