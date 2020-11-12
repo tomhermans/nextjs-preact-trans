@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+
+import { Devtools } from "@ui-devtools/tailwind";
+
 import { GlobalStyles } from "twin.macro";
 
 import "../styles/tailwind.css";
@@ -11,7 +14,7 @@ import Layout from "../components/Layout";
 import Head from "next/head";
 
 const App = ({ Component, pageProps, router }) => {
-	const [theme, setTheme] = useState(themes.dark);
+	const [theme, setTheme] = useState(themes.lobster);
 
 	const updateHtmlClass = (theme) => {
 		document.documentElement.setAttribute("data-theme", theme); // change htnl wrapper data-theme
@@ -20,14 +23,22 @@ const App = ({ Component, pageProps, router }) => {
 	};
 
 	return (
-		<>
+		<Devtools>
 			<GlobalStyles />
 			<ThemeContext.Provider value={theme}>
 				{/* <button onClick={toggleTheme}>Toggle Theme</button>{" "} */}
-				{["light", "dark", "geocities", "mario"].map((themeName) => (
+				{[
+					"light",
+					"dark",
+					"prim",
+					"geocities",
+					"mario",
+					"squarier",
+					"spacier",
+				].map((themeName) => (
 					<button
 						key={themeName}
-						className="mr-2 rounded bg-surface text-primary p-medium"
+						className="mr-2 rounded bg-secondary-500 text-primary p-medium"
 						onClick={() => updateHtmlClass(themeName)}
 					>
 						{themeName}
@@ -41,7 +52,7 @@ const App = ({ Component, pageProps, router }) => {
 					</MDXProvider>
 				</Layout>
 			</ThemeContext.Provider>
-		</>
+		</Devtools>
 	);
 };
 export default App;

@@ -1,0 +1,44 @@
+--color-bg: #fffffe;
+--color-bg-offset: #f2f4f6;
+--color-text: #1b2d45;
+--color-text-offset: #3a6297;
+--color-border: #d5e6fd;
+--color-primary: #00bfa2;
+--color-primary-offset: #00ebc7;
+--color-secondary: #ff5470;
+
+--diameter: 1190.84px;
+
+font-size: 100%;
+-webkit-tap-highlight-color: transparent;
+--font-family-display: Noe Display, Georgia, Times, serif;
+
+h1,
+h2 .. var(--font-family-display) ::selection {
+	background: var(--color-secondary);
+}
+
+.layout {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	min-height: 100%;
+	min-height: 100vh;
+	position: relative;
+	-webkit-transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.layout .main {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	-webkit-box-flex: 1;
+	flex: 1 0 auto;
+}

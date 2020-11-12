@@ -8,7 +8,7 @@ const Blog = (posts, prevPosts, nextPosts) => {
 	// console.log("Blog - posts object: ", posts, prevPosts, nextPosts);
 	return (
 		<main>
-			<h1 class="bg-orange-400 px-4">Hello from Blog</h1>
+			<h1 className="px-4 bg-yellow-200">Hello from Blog</h1>
 			<Link href="/about">
 				<a>About</a>
 			</Link>

@@ -70,14 +70,14 @@ h2 {
 	@apply font-bold text-24 text-dark;
 	// background: var(--my-variable-name) !important;
 	transition: background 0.25s;
-	&:hover {
-		@apply text-primary;
-	}
+	// &:hover {
+	// 	@apply text-primary;
+	// }
 }
-div,
-p {
-	@apply text-dark;
-}
+// div,
+// p {
+// 	@apply text-dark;
+// }
 // html {
 // 	--my-variable-name: red;
 // }
@@ -106,6 +106,7 @@ p {
 // // 	}
 // // }
 
+// Maxb
 // [data-theme="default"] {
 // 	--color-bg: #ffffff;
 // 	--color-bg-offset: #f7f7f9;

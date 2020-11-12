@@ -5,19 +5,19 @@
 // generate a new colors array by looping
 // e.g. customcolors : [100: "var(--color-red-100)",200: "var(--color-red-200)",.. ]
 
-const tinycolor = require("tinycolor2"); // https://github.com/bgrins/TinyColor
-var color = tinycolor("lime");
-var color1 = tinycolor("green");
+// const tinycolor = require("tinycolor2"); // https://github.com/bgrins/TinyColor
+// var color = tinycolor("lime");
+// var color1 = tinycolor("green");
 
-console.log("tinycolor", color, color.toHslString());
-console.log(color.getBrightness(), color.isLight());
-console.log(color1.getBrightness(), color1.isLight());
+// console.log("tinycolor", color, color.toHslString());
+// console.log(color.getBrightness(), color.isLight());
+// console.log(color1.getBrightness(), color1.isLight());
 
-var colors = tinycolor("#f00").triad();
-console.log(colors);
-colors.map((t) => {
-	console.log(t.toHslString());
-});
+// var colors = tinycolor("#f00").triad();
+// console.log(colors);
+// colors.map((t) => {
+// 	console.log(t.toHslString());
+// });
 
 const themeSwapper = require("tailwindcss-theme-swapper");
 const baseTheme = {
@@ -39,6 +39,17 @@ const baseTheme = {
 	},
 };
 
+const primTheme = {
+	colors: {
+		primary: "var(--color-primary-500)",
+		"primary-active": "var(--color-primary-700)",
+		air: "var(--color-primary-100)",
+		surface: "#111",
+		base: "var(--color-neutral-100)",
+		dark: "var(--color-neutral-900)",
+	},
+};
+
 const darkTheme = {
 	colors: {
 		primary: "#e320b6",
@@ -56,7 +67,7 @@ const geocitiesTheme = {
 		"primary-active": "#70a300",
 		air: "#daaa55",
 		surface: "#2f4d2f",
-		base: "var(--color-green-800)", //"#243b24"
+		base: "var(--color-green-400)", //"#243b24"
 		dark: "#99a663",
 	},
 };
@@ -104,19 +115,6 @@ module.exports = {
 		purgeLayersByDefault: true,
 	}, //https://tailwindcss.com/docs/upcoming-changes
 	theme: {
-		// colors: {
-		// 	gray: {
-		// 		100: "var(--color-gray-500)",
-		// 		200: "var(--color-gray-400)",
-		// 		300: "var(--color-gray-300)",
-		// 		400: "var(--color-gray-200)",
-		// 		500: "var(--color-gray-100)",
-		// 		600: "var(--color-gray-600)",
-		// 		700: "var(--color-gray-700)",
-		// 		800: "var(--color-gray-800)",
-		// 		900: "var(--color-gray-900)",
-		// 	},
-		// },
 		fontSize: {
 			12: "12px",
 			14: "14px",
@@ -129,58 +127,61 @@ module.exports = {
 			48: "48px",
 			64: "64px",
 		},
-		colors: {
-			gray: {
-				100: "#ccc",
-				200: "#bbb",
-				300: "#ddd",
-				400: "#f00",
-				500: "#0f0",
-				600: "#00f",
-				700: "var(--color-gray-700)",
-				800: "var(--color-gray-800)",
-				900: "var(--color-gray-900)",
-			},
-		},
 		extend: {
+			colors: {
+				white: "var(--color-white)",
+				black: "var(--color-black)",
+				primary: {
+					100: "var(--color-primary-100)",
+					200: "var(--color-primary-200)",
+					300: "var(--color-primary-300)",
+					400: "var(--color-primary-400)",
+					500: "var(--color-primary-500)",
+					600: "var(--color-primary-600)",
+					700: "var(--color-primary-700)",
+					800: "var(--color-primary-800)",
+					900: "var(--color-primary-900)",
+				},
+				secondary: {
+					100: "var(--color-secondary-100)",
+					200: "var(--color-secondary-200)",
+					300: "var(--color-secondary-300)",
+					400: "var(--color-secondary-400)",
+					500: "var(--color-secondary-500)",
+					600: "var(--color-secondary-600)",
+					700: "var(--color-secondary-700)",
+					800: "var(--color-secondary-800)",
+					900: "var(--color-secondary-900)",
+				},
+				neutral: {
+					100: "var(--color-neutral-100)",
+					200: "var(--color-neutral-200)",
+					300: "var(--color-neutral-300)",
+					400: "var(--color-neutral-400)",
+					500: "var(--color-neutral-500)",
+					600: "var(--color-neutral-600)",
+					700: "var(--color-neutral-700)",
+					800: "var(--color-neutral-800)",
+					900: "var(--color-neutral-900)",
+				},
+			},
 			screens: {
 				light: { raw: "(prefers-color-scheme: light)" },
 				dark: { raw: "(prefers-color-scheme: dark)" },
 			},
-			colors: {
-				grey: {
-					100: "var(--color-gray-500)",
-					200: "var(--color-gray-400)",
-					300: "var(--color-gray-300)",
-					400: "var(--color-gray-200)",
-					500: "var(--color-gray-100)",
-					600: "var(--color-gray-600)",
-					700: "var(--color-gray-700)",
-					800: "var(--color-gray-800)",
-					900: "var(--color-gray-900)",
-				},
-			},
-			// colors: {
-			// 	primary: "var(--primary)",
-			// 	secondary: "var(--secondary)",
-			// 	main: "var(--main)",
-			// 	background: "var(--background)",
-			// 	header: "var(--header)",
-			// 	accent: "var(--accent)",
-			// },
 		},
 	},
 	variants: {},
 	plugins: [
-		require("tailwind-css-variables")(
-			// exposes all TW custom properties - https://github.com/omarkhatibco/tailwind-css-variables
-			{
-				// modules
-			},
-			{
-				// options
-			}
-		),
+		// require("tailwind-css-variables")(
+		// 	// exposes all TW custom properties - https://github.com/omarkhatibco/tailwind-css-variables
+		// 	{
+		// 		// modules
+		// 	},
+		// 	{
+		// 		// options
+		// 	}
+		// ),
 		function ({ addBase, config }) {
 			addBase({
 				html: {
@@ -221,6 +222,12 @@ module.exports = {
 					name: "dark",
 					selectors: [".dark", '[data-theme="dark"]'],
 					theme: darkTheme,
+				},
+				{
+					name: "prim",
+					selectors: [".prim", "[prim]", '[data-theme="prim"]'],
+					mediaQuery: "@media (prefers-color-scheme: light)",
+					theme: primTheme,
 				},
 				{
 					name: "geocities",

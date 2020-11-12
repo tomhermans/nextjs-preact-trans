@@ -1,6 +1,6 @@
 const PostCard = ({ post }) => {
 	return (
-		<div class="postcard">
+		<div className="postcard">
 			<h3>post title = {post.title}</h3>
 			<p>
 				<h3>post date = {post.publishedAt} /publishedat</h3>

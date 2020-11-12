@@ -18,22 +18,23 @@ const Layout = ({ children }) => {
 	// console.log("themeContext : ", ThemeContext);
 
 	return (
-		<div className="layout">
+        <div className="layout">
 			<Header title="Tom" />
 			<Nav />
 			<Transition location={router.pathname}>
 				<main className="bg-squiggly-pseudo main">{children}</main>
 			</Transition>
+
+			<Footer title="At the bottom" />
+
 			<Button bg="red" className="py-3 mb-2">
 				Button
 			</Button>
 			<Button bg="blue" className="py-3 mb-2">
 				Button
 			</Button>
-
-			<Footer title="At the bottom" />
 			{/* <FooterSVG /> */}
 		</div>
-	);
+    );
 };
 export default Layout;

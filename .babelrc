@@ -1,5 +1,5 @@
 // In .babelrc
 {
 	"presets": ["next/babel", "@emotion/babel-preset-css-prop"],
-	"plugins": ["babel-plugin-macros"]
+	"plugins": ["babel-plugin-macros", "@ui-devtools/tailwind/babel"]
 }

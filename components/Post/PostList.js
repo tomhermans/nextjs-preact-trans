@@ -84,15 +84,15 @@ export default PostList;
 // 						</li>
 // 					)))
 // 			}
-// 			<div class="flex">
-// 				<div class="py-3">
+// 			<div className="flex">
+// 				<div className="py-3">
 // 					{prevPosts !== null && (
 // 						<Link href={"/blog/" + prevPosts} passHref>
 // 							<a>« see newer posts</a>
 // 						</Link>
 // 					)}
 // 				</div>
-// 				<div class="py-3">
+// 				<div className="py-3">
 // 					{nextPosts !== null && (
 // 						<Link href={"/blog/" + nextPosts} passHref>
 // 							<a>see older posts »</a>

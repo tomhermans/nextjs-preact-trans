@@ -9,6 +9,7 @@
 	},
 	"devDependencies": {
 		"@prefresh/next": "^0.3.0",
+		"@ui-devtools/tailwind": "ui-devtools/tailwind",
 		"react-refresh": "^0.8.3",
 		"tailwindcss": "^1.8.5",
 		"tinycolor2": "^1.4.1"

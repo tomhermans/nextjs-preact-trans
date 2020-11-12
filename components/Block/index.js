@@ -7,7 +7,7 @@ const Block = (props) => {
 			}
 		>
 			{/* <div className={'FancyBorder FancyBorder-' + props.color}> */}
-			{props.children} - {props.bg} - {props.text}
+			{props.children} / bg-{props.bg} / text-{props.text}
 		</div>
 	);
 };

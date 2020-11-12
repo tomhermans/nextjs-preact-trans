@@ -28,7 +28,7 @@ const Transition = ({ children, location, style }) => {
 	return (
 		<TransitionGroup
 			id="tg"
-			class="transition-group"
+			className="transition-group"
 			style={
 				{
 					// position: "relative",

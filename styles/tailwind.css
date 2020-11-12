@@ -2,6 +2,141 @@
 @tailwind components;
 @tailwind utilities;
 
+/* https://www.skies.dev/blog/tailwind-themes/ */
+/* index.css */
+:root {
+	--color-primary-100: theme("colors.blue.100");
+	--color-primary-200: theme("colors.blue.200");
+	--color-primary-300: theme("colors.blue.300");
+	--color-primary-400: theme("colors.blue.400");
+	--color-primary-500: theme("colors.blue.500");
+	--color-primary-600: theme("colors.blue.600");
+	--color-primary-700: theme("colors.blue.700");
+	--color-primary-800: theme("colors.blue.800");
+	--color-primary-900: theme("colors.blue.900");
+
+	--color-secondary-100: theme("colors.pink.100");
+	--color-secondary-200: theme("colors.pink.200");
+	--color-secondary-300: theme("colors.pink.300");
+	--color-secondary-400: theme("colors.pink.400");
+	--color-secondary-500: theme("colors.pink.500");
+	--color-secondary-600: theme("colors.pink.600");
+	--color-secondary-700: theme("colors.pink.700");
+	--color-secondary-800: theme("colors.pink.800");
+	--color-secondary-900: theme("colors.pink.900");
+
+	--color-neutral-100: theme("colors.gray.100");
+	--color-neutral-200: theme("colors.gray.200");
+	--color-neutral-300: theme("colors.gray.300");
+	--color-neutral-400: theme("colors.gray.400");
+	--color-neutral-500: theme("colors.gray.500");
+	--color-neutral-600: theme("colors.gray.600");
+	--color-neutral-700: theme("colors.gray.700");
+	--color-neutral-800: theme("colors.gray.800");
+	--color-neutral-900: theme("colors.gray.900");
+
+	--color-white: #fff;
+	--color-black: #000;
+}
+
+:root[data-theme="dark"] {
+	--color-primary-100: theme("colors.blue.900");
+	--color-primary-200: theme("colors.blue.800");
+	--color-primary-300: theme("colors.blue.700");
+	--color-primary-400: theme("colors.blue.600");
+	--color-primary-500: theme("colors.blue.500");
+	--color-primary-600: theme("colors.blue.400");
+	--color-primary-700: theme("colors.blue.300");
+	--color-primary-800: theme("colors.blue.200");
+	--color-primary-900: theme("colors.blue.100");
+
+	--color-secondary-100: theme("colors.pink.900");
+	--color-secondary-200: theme("colors.pink.800");
+	--color-secondary-300: theme("colors.pink.700");
+	--color-secondary-400: theme("colors.pink.600");
+	--color-secondary-500: theme("colors.pink.500");
+	--color-secondary-600: theme("colors.pink.400");
+	--color-secondary-700: theme("colors.pink.300");
+	--color-secondary-800: theme("colors.pink.200");
+	--color-secondary-900: theme("colors.pink.100");
+
+	--color-neutral-100: theme("colors.gray.900");
+	--color-neutral-200: theme("colors.gray.800");
+	--color-neutral-300: theme("colors.gray.700");
+	--color-neutral-400: theme("colors.gray.600");
+	--color-neutral-500: theme("colors.gray.500");
+	--color-neutral-600: theme("colors.gray.400");
+	--color-neutral-700: theme("colors.gray.300");
+	--color-neutral-800: theme("colors.gray.200");
+	--color-neutral-900: theme("colors.gray.100");
+
+	--color-white: #fff;
+	--color-black: #000;
+}
+/* 
+.theme-light {
+	--color-primaryBg: var(--color-primary-100);
+	--color-primaryBgSoft: var(--color-primary-200);
+	--color-primaryBgSofter: var(--color-primary-300);
+	--color-primarySoft: var(--color-primary-400);
+	--color-primary: var(--color-primary-500);
+	--color-primaryBold: var(--color-primary-600);
+	--color-onPrimaryBgSofter: var(--color-primary-700);
+	--color-onPrimaryBgSoft: var(--color-primary-800);
+	--color-onPrimaryBg: var(--color-primary-900);
+
+	--color-secondaryBg: var(--color-secondary-100);
+	--color-secondaryBgSoft: var(--color-secondary-200);
+	--color-secondaryBgSofter: var(--color-secondary-300);
+	--color-secondarySoft: var(--color-secondary-400);
+	--color-secondary: var(--color-secondary-500);
+	--color-secondaryBold: var(--color-secondary-600);
+	--color-onsecondaryBgSofter: var(--color-secondary-700);
+	--color-onsecondaryBgSoft: var(--color-secondary-800);
+	--color-onsecondaryBg: var(--color-secondary-900);
+
+	--color-neutralBg: var(--color-neutral-100);
+	--color-neutralBgSoft: var(--color-neutral-200);
+	--color-neutralBgSofter: var(--color-neutral-300);
+	--color-neutralSoft: var(--color-neutral-400);
+	--color-neutral: var(--color-neutral-500);
+	--color-neutralBold: var(--color-neutral-600);
+	--color-onNeutralBgSofter: var(--color-neutral-700);
+	--color-onNeutralBgSoft: var(--color-neutral-800);
+	--color-onNeutralBg: var(--color-neutral-900);
+}
+.theme-dark {
+	--color-onPrimaryBg: var(--color-primary-100);
+	--color-onPrimaryBgSoft: var(--color-primary-300);
+	--color-onPrimaryBgSofter: var(--color-primary-400);
+	--color-primaryBold: var(--color-primary-600);
+	--color-primary: var(--color-primary-800);
+	--color-primarySoft: var(--color-primary-900);
+	--color-primaryBgSofter: var(--color-primary-900);
+	--color-primaryBgSoft: var(--color-primary-900);
+	--color-primaryBg: var(--color-primary-900);
+
+	--color-onsecondaryBg: var(--color-secondary-100);
+	--color-onsecondaryBgSoft: var(--color-secondary-300);
+	--color-onsecondaryBgSofter: var(--color-secondary-400);
+	--color-secondaryBold: var(--color-secondary-600);
+	--color-secondary: var(--color-secondary-800);
+	--color-secondarySoft: var(--color-secondary-900);
+	--color-secondaryBgSofter: var(--color-secondary-900);
+	--color-secondaryBgSoft: var(--color-secondary-900);
+	--color-secondaryBg: var(--color-secondary-900);
+
+	--color-neutralBg: var(--color-neutral-800);
+	--color-neutralBgSoft: var(--color-neutral-700);
+	--color-neutralBgSofter: var(--color-neutral-600);
+	--color-neutralSoft: var(--color-neutral-500);
+	--color-neutral: var(--color-neutral-400);
+	--color-neutralBold: var(--color-neutral-300);
+	--color-onNeutralBgSofter: var(--color-neutral-200);
+	--color-onNeutralBgSoft: var(--color-neutral-100);
+	--color-onNeutralBg: var(--color-neutral-100);
+} */
+/* 
 @font-face {
 	font-family: "Lora";
 	font-weight: 300;
@@ -9,8 +144,8 @@
 	src: url("https://cms.jamstack.be/fonts/Lora-subset/lora-v14-latin-regular-subset.woff2")
 		format("woff2");
 	/* unicode-range: ''; */
-	font-display: swap;
-}
+/* font-display: swap; */
+/* } */
 
 /*
   load the subset AND the full family and use it as the fallback
@@ -25,7 +160,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Lora", serif;
+	/* font-family: "Lora", serif; */
 }
 
 /* focus */
